@@ -1,0 +1,39 @@
+{
+  "name": "pm2-wrapper",
+  "version": "0.0.1",
+  "description": "A programatic wrapper for PM2",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel src --out-dir lib",
+    "predistribute": "npm run compile",
+    "test": "babel-node ./node_modules/.bin/_mocha",
+    "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha",
+    "distribute": "npm publish"
+  },
+  "keywords": [
+    "PM2",
+    "Rest",
+    "healtcheck",
+    "metrics"
+  ],
+  "author": "Michael Iwersen <mi.iwersen@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-plugin-check-es2015-constants": "^6.3.13",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.4.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.3.13",
+    "babel-plugin-transform-es2015-classes": "^6.3.15",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.3.16",
+    "babel-plugin-transform-es2015-parameters": "^6.3.26",
+    "babel-plugin-transform-es2015-template-literals": "^6.3.13",
+    "chai": "^3.4.1",
+    "isparta": "^4.0.0",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "pm2": "^1.0.0"
+  }
+}
