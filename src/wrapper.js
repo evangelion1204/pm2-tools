@@ -27,7 +27,7 @@ export default class PM2Wrapper {
 
             bus.on('process:msg', function (packet) {
                 console.log('received message', JSON.stringify(packet))
-            })
+            });
 
             bus.on('log:out', function (packet) {
                 console.log('[App:%s] %s', packet.process.name, packet.data);
