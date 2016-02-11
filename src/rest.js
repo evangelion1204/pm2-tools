@@ -27,7 +27,7 @@ export default class RestInterface {
 
     onRequest(request, response) {
         switch(request.url) {
-            case '/healtcheck':
+            case '/healthcheck':
                 pm2.list(function (err, list) {
                     if (!err) {
                         const running = list.filter(function (app) {
