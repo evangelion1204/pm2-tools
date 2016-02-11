@@ -1,7 +1,7 @@
 var pm2 = require('pm2');
 var http = require('http');
 
-export default class PM2Wrapper {
+export default class Starter {
     constructor(options = {}) {
         this.options = options;
     }

@@ -1,4 +1,4 @@
 'use strict'
 
-exports.Wrapper = require('./lib/wrapper').default;
-exports.Resolver = require('./lib/rest').default;
+exports.Starter = require('./lib/wrapper').default;
+exports.RestService = require('./lib/rest').default;
