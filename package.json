@@ -8,7 +8,8 @@
     "predistribute": "npm run compile",
     "test": "babel-node ./node_modules/.bin/_mocha",
     "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha",
-    "distribute": "npm publish"
+    "distribute": "npm publish",
+    "postinstall": "npm run compile"
   },
   "keywords": [
     "PM2",
