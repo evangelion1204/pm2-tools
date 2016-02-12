@@ -22,7 +22,6 @@ export default class RestInterface {
         console.log(`Listening on port ${port}`)
 
         return this._server.listen(port);
-
     }
 
     onRequest(request, response) {
