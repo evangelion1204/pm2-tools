@@ -33,9 +33,9 @@ const app = new RestService({
     monitor_apps: ['my-application'] // if you just want to monitor specific apps
 });
 
-app.connect().then(
+app.connect().then(function () {
     app.listen(7979)
-);
+});
 ```
 
 The passed options `monitor_apps` allows you to control which PM2 applications you want to monitor. If not passed all will be monitored.
