@@ -11,12 +11,12 @@ Will start a server on the specified port with currently the following endpoints
 ```json
 {
     "process": {
-        "memory": <usage in bytes>,
-        "cpu": <cpu usage in %>
+        "memory": "<usage in bytes>",
+        "cpu": "<cpu usage in %>"
     },
-    restarts: <number of restarts>
-    status: <current process status (online...)>,
-    name: <name of the app>
+    "restarts": "<number of restarts>",
+    "status": "<current process status (online...)>",
+    "name": "<name of the app>"
 }
 ```
 
@@ -27,7 +27,7 @@ Let your application run with PM2, either via JSON or directly via command line 
 ```js
 'use strict';
 
-const RestService = require('pm2-tools').RestService;`
+const RestService = require('pm2-tools').RestService;
 
 const app = new RestService({
     monitor_apps: ['my-application'] // if you just want to monitor specific apps
@@ -61,7 +61,8 @@ Another possibility is to also start the status/metric server with PM2.
       "exec_mode": "cluster"
     }
   ],
-}```
+}
+```
 
 The only important config is the the above described `monitor_apps` which needs to be set to `['my-app']` to deliver the correct status, else we would take status into account too and would never get a bad healthcheck.
 
