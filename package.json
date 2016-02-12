@@ -15,7 +15,7 @@
     "Rest",
     "healtcheck",
     "metrics",
-    "AWS8"
+    "AWS"
   ],
   "author": "Michael Iwersen <mi.iwersen@gmail.com>",
   "license": "MIT",
