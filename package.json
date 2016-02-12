@@ -1,21 +1,21 @@
 {
   "name": "pm2-tools",
   "version": "0.0.1",
-  "description": "A programatic wrapper for PM2",
+  "description": "Different tools to work with PM2 and its programatic interface.",
   "main": "index.js",
   "scripts": {
     "compile": "babel src --out-dir lib",
     "predistribute": "npm run compile",
     "test": "babel-node ./node_modules/.bin/_mocha",
     "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha",
-    "distribute": "npm publish",
-    "postinstall": "npm run compile"
+    "distribute": "npm publish"
   },
   "keywords": [
     "PM2",
     "Rest",
     "healtcheck",
-    "metrics"
+    "metrics",
+    "AWS"
   ],
   "author": "Michael Iwersen <mi.iwersen@gmail.com>",
   "license": "MIT",
