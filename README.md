@@ -1,4 +1,4 @@
-# PM2 - Tools [![Build Status](https://travis-ci.org/evangelion1204/pm2-tools.svg?branch=master)](https://travis-ci.org/evangelion1204/pm2-tools) [![Build Status](https://travis-ci.org/evangelion1204/pm2-tools.svg?branch=master)](https://travis-ci.org/evangelion1204/pm2-tools)
+# PM2 - Tools [![Build Status](https://travis-ci.org/evangelion1204/pm2-tools.svg?branch=master)](https://travis-ci.org/evangelion1204/pm2-tools) [![Coverage Status](https://coveralls.io/repos/github/evangelion1204/pm2-tools/badge.svg?branch=master)](https://coveralls.io/github/evangelion1204/pm2-tools?branch=master)
 
 This package contains a few tools to work with AWS.
 
