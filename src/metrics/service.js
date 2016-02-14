@@ -2,18 +2,26 @@
 const defaultOptions = {
 };
 
-export default class MetricService {
+export default class MetricsService {
     constructor(options = {}) {
         this.options = options;
 
         this.metrics = {};
     }
 
-    registerMetric(name, metric) {
+    register(name, metric) {
         this.metrics[name] = metric;
+
+        return this;
     }
 
-    pushEvent(name, event) {
+    push(name, event) {
+        if (!this.metrics[name]) {
+            throw new Error(`Metric "${name}" is not registered`)
+        }
+
         this.metrics[name].push(event);
+
+        return this;
     }
 }
