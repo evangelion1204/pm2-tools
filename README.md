@@ -1,4 +1,4 @@
-# PM2 - Tools
+# PM2 - Tools [![Build Status](https://travis-ci.org/evangelion1204/pm2-tools.svg?branch=master)](https://travis-ci.org/evangelion1204/pm2-tools)
 
 This package contains a few tools to work with AWS.
 
