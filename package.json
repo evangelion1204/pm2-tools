@@ -7,7 +7,7 @@
     "compile": "babel src --out-dir lib",
     "predistribute": "npm run compile",
     "test": "babel-node ./node_modules/.bin/_mocha --recursive test",
-    "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha --recursive test",
+    "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive test",
     "distribute": "npm publish"
   },
   "keywords": [
