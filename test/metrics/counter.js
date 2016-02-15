@@ -35,4 +35,15 @@ describe('CounterMetric', function() {
 
         expect(instance.value).to.be.equal(3);
     });
+
+    it('serialize should return the value', function () {
+        var instance = new Metric();
+
+        instance.push();
+        instance.push();
+        instance.push();
+
+        expect(instance.serialize()).to.be.equal(instance.value);
+    });
+
 });

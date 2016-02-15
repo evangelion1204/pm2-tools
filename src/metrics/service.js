@@ -24,4 +24,11 @@ export default class MetricsService {
 
         return this;
     }
+
+    serialize() {
+        return Object.keys(this.metrics).reduce(
+            (result, metric) => Object.assign(result, {metric: this.metrics[metric].serialize()}),
+            {}
+        );
+    }
 }

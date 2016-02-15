@@ -19,4 +19,8 @@ export default class AverageMetric {
     get value() {
         return this.average;
     }
+
+    serialize() {
+        return this.value;
+    }
 }

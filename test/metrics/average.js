@@ -35,4 +35,14 @@ describe('AverageMetric', function() {
 
         expect(instance.value).to.be.equal(20);
     });
+
+    it('serialize should return the value', function () {
+        var instance = new Metric();
+
+        instance.push(10);
+        instance.push(20);
+        instance.push(30);
+
+        expect(instance.serialize()).to.be.equal(instance.value);
+    });
 });

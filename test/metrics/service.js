@@ -45,4 +45,16 @@ describe('MetricsService', function() {
         expect(instance.push('metric', 'payload')).to.be.equal(instance);
         expect(mock.push).to.be.calledWith('payload');
     });
+
+    it('serializing should call serialize of registered metrics', function () {
+        var instance = new Service();
+        var mock = {
+            serialize: sinon.stub().returns(20)
+        };
+
+        instance.register('metric', mock);
+
+        expect(instance.serialize()).to.be.deep.equal({metric: 20});
+        expect(mock.serialize).to.be.called;
+    });
 });

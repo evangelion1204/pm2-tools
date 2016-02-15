@@ -15,4 +15,8 @@ export default class CountMetric {
     get value() {
         return this.counter;
     }
+
+    serialize() {
+        return this.value;
+    }
 }
