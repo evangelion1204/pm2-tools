@@ -8,7 +8,9 @@
     "predistribute": "npm run compile",
     "test": "babel-node ./node_modules/.bin/_mocha --recursive test",
     "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive test",
-    "distribute": "npm publish"
+    "distribute": "npm publish",
+    "prebasic": "npm run compile",
+    "basic": "pm2 --no-daemon start examples/basic/pm2.json"
   },
   "keywords": [
     "PM2",
