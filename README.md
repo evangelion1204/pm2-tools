@@ -10,13 +10,18 @@ Will start a server on the specified port with currently the following endpoints
 - `/metrics` => wraps the `pm2 list` command and returns the following structure
 ```json
 {
-    "process": {
-        "memory": "<usage in bytes>",
-        "cpu": "<cpu usage in %>"
-    },
-    "restarts": "<number of restarts>",
-    "status": "<current process status (online...)>",
-    "name": "<name of the app>"
+    "processes": [{
+        "process": {
+            "memory": "<usage in bytes>",
+            "cpu": "<cpu usage in %>"
+        },
+        "restarts": "<number of restarts>",
+        "status": "<current process status (online...)>",
+        "name": "<name of the app>"
+    }],
+    "metrics": {
+        "<name>": "<metric data>"
+    }
 }
 ```
 
@@ -67,3 +72,35 @@ Another possibility is to also start the status/metric server with PM2.
 The only important config is the the above described `monitor_apps` which needs to be set to `['my-app']` to deliver the correct status, else we would take status into account too and would never get a bad healthcheck.
 
 For Docker finally start with `pm2 --no-daemon pm2.json` to keep Docker alive or without `--no-daemon` for any other environment.
+
+### Metrics
+
+There are 4 different built in metrics.
+
+- Counter => a simple counter which requires no params
+- MultiCounter => like counter but accepts one additional param to count for examples requests paths
+- Average => a simple average counter to measure response times
+- MultiAverage => like average it accepts an additional param that allows to measure for example different averages of request paths
+Updadad
+#### Usage
+
+##### Register
+
+Before using a custom metric it needs to be registered.
+
+```js
+    var MultiAverage = require('pm2-tools').Metrics.MultiAverage;
+
+    instance.registerMetric('request_time_by_path', new MultiAverage());
+```
+
+##### Sending data to metrics
+
+The application it self can use the `MessageBus` to publish metrics.
+
+```js
+var MessageBus = require('pm2-tools').MessageBus;
+var bus = new MessageBus();
+
+bus.publish('request_time_by_path', new Date() - start, '/my-url');
+```

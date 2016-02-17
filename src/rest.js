@@ -68,19 +68,20 @@ export default class RestInterface extends EventEmitter {
                     if (!err) {
                         const processMetrics = {
                             processes: list.filter(function (app) {
-                                return this.options.monitor_apps.length ? this.options.monitor_apps.indexOf(app.name) >= 0 : true;
-                            }.bind(this)).map(function (app) {
-                                return {
-                                    process: app.monit,
-                                    restarts: app.pm2_env.restart_time,
-                                    status: app.pm2_env.status,
-                                    name: app.name
-                                }
-                            }, false)
+                                    return this.options.monitor_apps.length ? this.options.monitor_apps.indexOf(app.name) >= 0 : true;
+                                }.bind(this)).map(function (app) {
+                                    return {
+                                        process: app.monit,
+                                        restarts: app.pm2_env.restart_time,
+                                        status: app.pm2_env.status,
+                                        name: app.name
+                                    }
+                                }, false),
+                            metrics: {}
                         };
 
                         Object.keys(this.metrics).forEach(function (metric) {
-                            processMetrics[metric] = this.metrics[metric].serialize();
+                            processMetrics.metrics[metric] = this.metrics[metric].serialize();
                         }.bind(this));
 
                         response.writeHead(200);
