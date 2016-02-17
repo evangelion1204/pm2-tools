@@ -6,6 +6,7 @@ var server = this._server = http.createServer(function (req, res) {
     (function delayRequest(start) {
         setTimeout(function () {
             bus.publish('total_requests');
+            bus.publish('requests_by_path', req.url);
             bus.publish('average_request_time', new Date() - start);
             res.writeHead(200);
             res.end('Ok');
