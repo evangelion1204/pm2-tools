@@ -25,7 +25,7 @@ export default class RestInterface extends EventEmitter {
 
     onMessage(message) {
         console.log(message);
-        this.emit(message.data.event, message.data.payload);
+        this.emit(message.data.event, ...message.data.payload);
     }
 
     registerMetric(event, metric) {

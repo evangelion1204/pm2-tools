@@ -9,7 +9,7 @@ export default class MessageBus {
         console.log(message);
     }
 
-    publish(event, payload) {
+    publish(event, ...payload) {
         process.send({
             type: 'process:msg',
             data: {

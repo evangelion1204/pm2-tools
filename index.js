@@ -6,5 +6,6 @@ exports.MessageBus = require('./lib/bus').default;
 exports.Metrics = {
     Counter: require('./lib/metrics/counter').default,
     MultiCounter: require('./lib/metrics/multi-counter').default,
-    Average: require('./lib/metrics/average').default
+    Average: require('./lib/metrics/average').default,
+    MultiAverage: require('./lib/metrics/multi-average').default
 };
