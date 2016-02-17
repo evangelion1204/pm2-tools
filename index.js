@@ -2,3 +2,8 @@
 
 //exports.Starter = require('./lib/starter').default;
 exports.RestService = require('./lib/rest').default;
+exports.MessageBus = require('./lib/bus').default;
+exports.Metrics = {
+    Counter: require('./lib/metrics/counter').default,
+    Average: require('./lib/metrics/average').default
+};

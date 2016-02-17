@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "status",
+      "script": "examples/metrics/status.js",
+      "instances": 1
+    },
+    {
+      "name": "server",
+      "script": "examples/metrics/server.js",
+      "instances": 1
+    }
+  ]
+}

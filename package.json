@@ -10,7 +10,9 @@
     "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive test",
     "distribute": "npm publish",
     "prebasic": "npm run compile",
-    "basic": "pm2 --no-daemon start examples/basic/pm2.json"
+    "premetrics": "npm run compile",
+    "basic": "pm2 --no-daemon start examples/basic/pm2.json",
+    "metrics": "pm2 --no-daemon start examples/metrics/pm2.json"
   },
   "keywords": [
     "PM2",
