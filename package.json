@@ -1,6 +1,6 @@
 {
   "name": "pm2-tools",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Different tools to work with PM2 and its programatic interface.",
   "main": "index.js",
   "scripts": {
