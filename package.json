@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "babel src --out-dir lib",
     "predistribute": "npm run compile",
-    "test": "babel-node ./node_modules/.bin/_mocha --recursive test",
+    "test": "babel-node --plugins transform-es2015-modules-commonjs,transform-es2015-parameters,babel-plugin-transform-es2015-block-scoping,babel-plugin-check-es2015-constants,babel-plugin-transform-es2015-classes,babel-plugin-transform-es2015-template-literals,babel-plugin-transform-es2015-arrow-functions -- ./node_modules/.bin/_mocha --recursive test",
     "coverage": "babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha -- --recursive test",
     "distribute": "npm publish",
     "prebasic": "npm run compile",

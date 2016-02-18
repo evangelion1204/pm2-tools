@@ -81,7 +81,7 @@ There are 4 different built in metrics.
 - MultiCounter => like counter but accepts one additional param to count for examples requests paths
 - Average => a simple average counter to measure response times
 - MultiAverage => like average it accepts an additional param that allows to measure for example different averages of request paths
-Updadad
+
 #### Usage
 
 ##### Register
